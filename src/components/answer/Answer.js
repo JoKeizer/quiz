@@ -4,10 +4,10 @@ import './Answer.css';
 
 function Answer ({id, answer}) {
     return (
-        <button className="btn-answer" value={id}>
-            <div className="answer-id">{id}</div>
-            {answer}
+        <button className="btn-answer" value={id}><div className="answer-id">{id}</div>
+        {answer}
         </button>
+    
     );
 }
 

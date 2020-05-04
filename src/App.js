@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Progress from './components/progress/Progress'
 import Question from './components/question/Question'
-import Answer from './components/answer/Answer'
+import Answers from './components/answers/Answers'
 import Header from './components/header/Header'
+import Score from './components/score/Score'
 
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
     <div className="container">
       <Header title="Trivia"/>
       <div className="question-container">
-        <Progress currentQuestion="1" total={3}/>
+        <Progress currentQuestion="1" total={10} active={true}/>
         <Question question="Welke Feyenoorder speelde dit seizoen de meeste minuten onder Dick Advocaat?"/>
-        <Answer id="A" answer="Leroy Fer"/>
+        <Answers />
+        <Score totalPoints={365} time={3000}/>
+
       </div>
     </div>
   );

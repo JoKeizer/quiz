@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Header.css'
 
 function Header ({title}) {
+
     return (
         <header >
             <span className="icon"></span>
