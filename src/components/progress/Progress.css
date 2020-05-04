@@ -1,0 +1,6 @@
+.question-title{
+    font-family: var(--subTitleFont);
+    color: var(--lightGrey);
+    text-align: center;
+    font-size: 1.4rem;
+}
