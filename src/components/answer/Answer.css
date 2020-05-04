@@ -18,6 +18,15 @@
     transition-duration: 0.1s;
     margin: 0 0 20px 0;
   }
+
+  .btn-answer.correct{
+    background: var(--secondaryColor);
+  }
+  .btn-answer.not{
+    background: var(--primaryColor);
+  }
+
+ 
   .btn-answer:before {
     content: "";
     position: absolute;
@@ -38,13 +47,17 @@
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
+
   .btn-answer:hover, .btn-answer:focus, .btn-answer:active {
     color: var(--white);
   }
+
   .btn-answer:hover:before, .btn-answer:focus:before, .btn-answer:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-  }
+  } 
+
+
 
   
 

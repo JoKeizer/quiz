@@ -9,7 +9,7 @@ import './TimeProgress.css';
 function TimeProgress ({percent, time, score}) {
     console.log(time)
     const scoreNumber = useSpring({ 
-        from: { val: 0 }, to: { val: 100 },
+        from: { val: 100 }, to: { val: 0 },
         config: {duration: `${time}`}
     });
 
