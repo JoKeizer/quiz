@@ -4,21 +4,22 @@ import './Answers.css';
 import Answer from '../answer/Answer'
 
 
-function Answers ({answers, letter, correctAnswer}) {
-    console.log("hallo")
-
-    
+// function Answers (props) {
+function Answers ({answers, currentAnswer, handleClick}) {
+    let selectedValue = null;
     return (
+
         <Fragment>
-            {(answers).map((item, index) => (
+             {(answers.answers).map((answer, index) => (
+                 selectedValue = index + 1,
                 <Answer 
-                key={index} 
-                id={index } 
-                answer={item} 
-                correctAnswer={correctAnswer}
+                    key={index} 
+                    valueId={index + 1} 
+                    answer={answer} 
+                    handleClick={handleClick}        
+                    selected={currentAnswer ===  selectedValue}
                 /> 
-            ))}
-        
+            ))} 
         </Fragment>
     );
 }

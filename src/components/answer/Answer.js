@@ -2,25 +2,23 @@ import React, {useState} from 'react';
 import './Answer.css';
 
 
-function Answer ({id, answer, correctAnswer}) {
+function Answer ({ answer, valueId, selected, handleClick}) {
+    console.log(selected, "selected")
 
-    const [style, setStyle] = useState('btn-answer')
+    let classes =['btn-answer']
+    // selected = true
 
-    const onQuestionClick = e => {
-        if(correctAnswer === answer) {
-            setStyle('btn-answer correct') 
-        } else {
-            setStyle('btn-answer not') 
-        }
-    };
+    if(selected) {
+        classes.push('correct')
+    }
 
 
     return (
         <button 
-        onClick={onQuestionClick}
-        className={style}
-        value={id}>
-            <div className="answer-id">{id}</div>
+        className={classes.join(' ')}
+        onClick={handleClick}
+        value={valueId}>
+            <div className="answer-id">{valueId}</div>
         {answer}
         </button>
     
