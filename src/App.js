@@ -10,7 +10,7 @@ function App() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [currentAnswers, setCurrentAnswers] = useState([]);
 
-    const [allUserAnswers, setAllUserAnswers] = useState([]);
+    const allUserAnswers = [];
 
     const questions = [
         {
@@ -72,23 +72,27 @@ function App() {
     ];
 
 
-  const question = questions[currentQuestion];
+    const question = questions[currentQuestion];
     const userAnswerID = currentAnswers[currentQuestion];
 
-    console.log(userAnswerID, "userAnswerID")
-
     //on question click
-    const handleClick = e => {
+    const handleClick = (e, currentQuestion ) => {
         setCurrentAnswers(currentAnswers.concat([parseInt(e.target.value)]));
+        addUserAnswer(e.target.value)
         nextQuestion()
+    };
+
+    const addUserAnswer = (answerIndex) => {
+      console.log(answerIndex);
+
     };
 
 
     //Next question
     const nextQuestion = () => {
-      // const userAnswer = userAnswerID;
-      // console.log("userAnswer",userAnswer);
-      // setAllUserAnswers(allUserAnswers => [...allUserAnswers, userAnswer]);
+      const userAnswer = userAnswerID;
+      console.log("userAnswer",userAnswer);
+      allUserAnswers.push(userAnswerID)
 
       setTimeout(() => {
         if(currentQuestion + 1 < questions.length) {
@@ -110,6 +114,7 @@ function App() {
                     userAnswerID={userAnswerID}
                     handleClick={handleClick}
                     nextQuestion={nextQuestion}
+                    questionId={currentQuestion}
                 />
                 <Score totalPoints={365} time={30000}/>
                 ​

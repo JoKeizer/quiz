@@ -3,6 +3,8 @@ import './Answers.css';
 import Answer from '../answer/Answer'
 
 function Answers({answers, userAnswerID, handleClick}) {
+
+
     let selectedValue = null;
     const abs = ['A', 'B', 'C', 'D'];
 
