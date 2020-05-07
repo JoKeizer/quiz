@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import './Answer.css';
 
 
-function Answer ({ answer, valueId, selected, handleClick}) {
-    console.log(selected, "selected")
-
+function Answer ({ answer, valueId, letter, selected, handleClick}) {
     let classes =['btn-answer']
     // selected = true
 
@@ -12,16 +10,14 @@ function Answer ({ answer, valueId, selected, handleClick}) {
         classes.push('correct')
     }
 
-
     return (
         <button 
         className={classes.join(' ')}
         onClick={handleClick}
         value={valueId}>
-            <div className="answer-id">{valueId}</div>
+            <div className="answer-id">{letter}</div>
         {answer}
         </button>
-    
     );
 }
 
