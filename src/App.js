@@ -41,47 +41,55 @@ function App() {
       video: "",
       answer: "England"
     },
-    {
-      id: 3,
-      question: "Which Williams sister has won more Grand Slam titles?",
-      answers: ["Serena Williams", "Venus Williams"],
-      image: "",
-      video: "",
-      answer: "Serena Williams"
-    },
-    {
-      id: 4,
-      question: "What country won the very first FIFA World Cup in 1930?",
-      answers: ["Spain", "Uruguay", "Germany", "Argentina"],
-      image: "",
-      video: "",
-      answer: "Uruguay"
-    },
-    {
-      id: 5,
-      question: "In what year was the first ever Wimbledon Championship held?",
-      answers: ["1910", "1887", "1877", "1904"],
-      image: "",
-      video: "",
-      answer: "1877"
-    },
-    {
-      id: 6,
-      question: "Which racer holds the record for the most Grand Prix wins?",
-      answers: ["Sebastian Vettel", "Lewis hamilton ", "Max Verstappen", "Michael Schumacher"],
-      image: "",
-      video: "",
-      answer: "Michael Schumacher"
-    },
-    {
-      id: 7,
-      question: "Which of these events is NOT part of a decathlon?",
-      answers: ["Javelin", "1500m", "Hammer throw", "Pole vault"],
-      image: "",
-      video: "",
-      answer: "Hammer Throw"
-    },
+    // {
+    //   id: 3,
+    //   question: "Which Williams sister has won more Grand Slam titles?",
+    //   answers: ["Serena Williams", "Venus Williams"],
+    //   image: "",
+    //   video: "",
+    //   answer: "Serena Williams"
+    // },
+    // {
+    //   id: 4,
+    //   question: "What country won the very first FIFA World Cup in 1930?",
+    //   answers: ["Spain", "Uruguay", "Germany", "Argentina"],
+    //   image: "",
+    //   video: "",
+    //   answer: "Uruguay"
+    // },
+    // {
+    //   id: 5,
+    //   question: "In what year was the first ever Wimbledon Championship held?",
+    //   answers: ["1910", "1887", "1877", "1904"],
+    //   image: "",
+    //   video: "",
+    //   answer: "1877"
+    // },
+    // {
+    //   id: 6,
+    //   question: "Which racer holds the record for the most Grand Prix wins?",
+    //   answers: ["Sebastian Vettel", "Lewis hamilton ", "Max Verstappen", "Michael Schumacher"],
+    //   image: "",
+    //   video: "",
+    //   answer: "Michael Schumacher"
+    // },
+    // {
+    //   id: 7,
+    //   question: "Which of these events is NOT part of a decathlon?",
+    //   answers: ["Javelin", "1500m", "Hammer throw", "Pole vault"],
+    //   image: "",
+    //   video: "",
+    //   answer: "Hammer Throw"
+    // },
   ];
+
+
+  const resetQuiz= () => {
+    setFinishQuiz(true);
+    setCurrentQuestion(0);
+    setUserAnswers([]);
+    setTimer(true);
+  }
 
 
   const question = questions[currentQuestion];
@@ -117,13 +125,13 @@ function App() {
 
 const stopTimerOnClick = () => {
     setTimer(stopTimer => !stopTimer)
-}
+};
 
 const resetTimerOnNextQuestion = () => {
   resetTimer(reset => !reset)
-}
+};
 
-console.log("finishQuiz", finishQuiz)
+console.log("userAnswers", userAnswers)
 
   return (
       <Fragment>
@@ -131,7 +139,7 @@ console.log("finishQuiz", finishQuiz)
             <Fragment>
               <div className="container">
                 <Header title="Trivia"/>
-                <div className="question-container">
+                <div className="game-container">
                   <Progress currentQuestion={currentQuestion + 1} total={questions.length} active={true}/>
                   {question.video && question.image === '' ? null : <Media image={question.image} video={question.video}/>}
                   <Question question={question.question}/>
@@ -159,7 +167,20 @@ console.log("finishQuiz", finishQuiz)
             <Fragment>
               <div className="container">
                 <Header title="Finish"/>
+                <div className="game-container">
+                  <ul className="answer-list">{userAnswers.map(item => (
+                      <li>{item}</li>
+                  ))}</ul>
 
+                  <div className="total-time">Total time: 29sec</div>
+                  <div className="total-ranking">Ranglijst: 2nd</div>
+
+                  <Score
+                      Score={365}
+                  />
+                  <button className="btn" onClick={() => resetQuiz()} >Play again</button>
+
+                </div>
               </div>
             </Fragment>
         ) }

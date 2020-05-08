@@ -106,14 +106,49 @@ p {
   align-items: center;
 }
 
-.question-container {
+.game-container {
   background-color: var(--white);
   height: 100%;
   padding: 0 20px 20px 20px;
   box-shadow: 10px 10px 60px -27px rgba(23,23,23,0.25);
   border-radius: 30px;
-  max-width: var(--maxWidthContainer);
+  width: var(--maxWidthContainer);
   margin: auto;
+}
+
+.btn {
+  background: var(--primaryColor);
+  width: 50%;
+  height: 30px;
+  font-family: var(--primaryFontBold);
+  font-size: 1.1rem;
+  padding-left: 12px;
+  display: flex;
+  color: var(--white);
+  border-radius: 30px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover {
+  color: var(--secondaryColor)
+}
+
+.answer-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  line-height: 2;
+}
+
+.total-time  {
+  text-align: center;
+}
+
+.total-ranking {
+  text-align: center;
 }
 
 

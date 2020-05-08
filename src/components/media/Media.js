@@ -3,10 +3,6 @@ import './Media.css';
 
 function Media({image, video}) {
 
-    console.log("Media running")
-    console.log(image)
-
-
     return (
         <Fragment>
             {image ? <div className="image-container">

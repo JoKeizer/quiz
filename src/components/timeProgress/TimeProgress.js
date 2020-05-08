@@ -29,8 +29,6 @@ function TimeProgress ({percent, time , stopTimerOnClick, resetTimerOnNextQuesti
   }, [stopTimerOnClick]);
 
 
-  console.log(percentRange, "percentRange")
-
     return (
       <div>
       {seconds} seconds have elapsed since mounting.
