@@ -42,46 +42,46 @@ function App() {
       video: "",
       answer: "England"
     },
-    // {
-    //   id: 3,
-    //   question: "Which Williams sister has won more Grand Slam titles?",
-    //   answers: ["Serena Williams", "Venus Williams"],
-    //   image: "",
-    //   video: "",
-    //   answer: "Serena Williams"
-    // },
-    // {
-    //   id: 4,
-    //   question: "What country won the very first FIFA World Cup in 1930?",
-    //   answers: ["Spain", "Uruguay", "Germany", "Argentina"],
-    //   image: "",
-    //   video: "",
-    //   answer: "Uruguay"
-    // },
-    // {
-    //   id: 5,
-    //   question: "In what year was the first ever Wimbledon Championship held?",
-    //   answers: ["1910", "1887", "1877", "1904"],
-    //   image: "",
-    //   video: "",
-    //   answer: "1877"
-    // },
-    // {
-    //   id: 6,
-    //   question: "Which racer holds the record for the most Grand Prix wins?",
-    //   answers: ["Sebastian Vettel", "Lewis hamilton ", "Max Verstappen", "Michael Schumacher"],
-    //   image: "",
-    //   video: "",
-    //   answer: "Michael Schumacher"
-    // },
-    // {
-    //   id: 7,
-    //   question: "Which of these events is NOT part of a decathlon?",
-    //   answers: ["Javelin", "1500m", "Hammer throw", "Pole vault"],
-    //   image: "",
-    //   video: "",
-    //   answer: "Hammer Throw"
-    // },
+    {
+      id: 3,
+      question: "Which Williams sister has won more Grand Slam titles?",
+      answers: ["Serena Williams", "Venus Williams"],
+      image: "",
+      video: "",
+      answer: "Serena Williams"
+    },
+    {
+      id: 4,
+      question: "What country won the very first FIFA World Cup in 1930?",
+      answers: ["Spain", "Uruguay", "Germany", "Argentina"],
+      image: "",
+      video: "",
+      answer: "Uruguay"
+    },
+    {
+      id: 5,
+      question: "In what year was the first ever Wimbledon Championship held?",
+      answers: ["1910", "1887", "1877", "1904"],
+      image: "",
+      video: "",
+      answer: "1877"
+    },
+    {
+      id: 6,
+      question: "Which racer holds the record for the most Grand Prix wins?",
+      answers: ["Sebastian Vettel", "Lewis hamilton ", "Max Verstappen", "Michael Schumacher"],
+      image: "",
+      video: "",
+      answer: "Michael Schumacher"
+    },
+    {
+      id: 7,
+      question: "Which of these events is NOT part of a decathlon?",
+      answers: ["Javelin", "1500m", "Hammer throw", "Pole vault"],
+      image: "",
+      video: "",
+      answer: "Hammer Throw"
+    },
   ];
 
 
