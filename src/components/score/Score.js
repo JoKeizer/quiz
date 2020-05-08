@@ -6,7 +6,7 @@ import TimeProgress from '../timeProgress/TimeProgress';
 function Score ({totalPoints}) {
     return (
         <Fragment>
-            <p className="points">Totaal: {totalPoints}</p>
+            <p className="points">Totaal: {totalPoints} punten</p>
         </Fragment>
     );
 }

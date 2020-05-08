@@ -1,6 +1,6 @@
 .progress-bar {
     position: relative;
-    height: 20px;
+    height: 8px;
     width: var(--maxWidthContainer);
     border-radius: 50px;
     border: 1px solid var(--primaryColor);

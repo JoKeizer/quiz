@@ -22,56 +22,57 @@
   .btn-answer.correct{
     background: var(--secondaryColor);
   }
-  .btn-answer.correct:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--secondaryColor);
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-  }
- 
-  .btn-answer:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--primaryColor);
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-  }
 
-  .btn-answer:hover, .btn-answer:focus, .btn-answer:active {
-    color: var(--white);
-  }
+  /*.btn-answer.correct:before {*/
+  /*  content: "";*/
+  /*  position: absolute;*/
+  /*  z-index: -1;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  right: 0;*/
+  /*  bottom: 0;*/
+  /*  background: var(--secondaryColor);*/
+  /*  -webkit-transform: scaleX(0);*/
+  /*  transform: scaleX(0);*/
+  /*  -webkit-transform-origin: 100% 50%;*/
+  /*  transform-origin: 100% 50%;*/
+  /*  -webkit-transition-property: transform;*/
+  /*  transition-property: transform;*/
+  /*  -webkit-transition-duration: 0.2s;*/
+  /*  transition-duration: 0.2s;*/
+  /*  -webkit-transition-timing-function: ease-out;*/
+  /*  transition-timing-function: ease-out;*/
+  /*}*/
 
-  .btn-answer:hover:before, .btn-answer:focus:before, .btn-answer:active:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  } 
+  /*.btn-answer:before {*/
+  /*  content: "";*/
+  /*  position: absolute;*/
+  /*  z-index: -1;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  right: 0;*/
+  /*  bottom: 0;*/
+  /*  background: var(--primaryColor);*/
+  /*  -webkit-transform: scaleX(0);*/
+  /*  transform: scaleX(0);*/
+  /*  -webkit-transform-origin: 100% 50%;*/
+  /*  transform-origin: 100% 50%;*/
+  /*  -webkit-transition-property: transform;*/
+  /*  transition-property: transform;*/
+  /*  -webkit-transition-duration: 0.2s;*/
+  /*  transition-duration: 0.2s;*/
+  /*  -webkit-transition-timing-function: ease-out;*/
+  /*  transition-timing-function: ease-out;*/
+  /*}*/
+
+  /*.btn-answer:hover, .btn-answer:focus, .btn-answer:active {*/
+  /*  color: var(--white);*/
+  /*}*/
+
+  /*.btn-answer:hover:before, .btn-answer:focus:before, .btn-answer:active:before {*/
+  /*  -webkit-transform: scaleX(1);*/
+  /*  transform: scaleX(1);*/
+  /*} */
 
 
 

@@ -120,6 +120,9 @@ function App() {
   const goToQuestion = (questionIndex) => {
     if (questionIndex < questions.length) {
       setTimeout(() => {
+        setUserAnswersID(null)
+        console.log(userAnswersID, "onTIMEOUT?????")
+
         setCurrentQuestion(questionIndex)
         resetTimerOnNextQuestion();
       }, 1000);

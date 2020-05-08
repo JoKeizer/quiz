@@ -6,6 +6,8 @@ function Answer ({ answer, valueId, letter, currentQuestionIndex, selected, hand
     if(selected) {
         classes.push('correct')
     }
+
+
     return (
         <button
             className={classes.join(' ')}
