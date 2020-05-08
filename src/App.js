@@ -15,6 +15,7 @@ function App() {
   const [stopTimer, setTimer] = useState(true);
   const [reset, resetTimer] = useState(false);
   const [finishQuiz, setFinishQuiz] = useState(true);
+  const [userAnswersID, setUserAnswersID] = useState();
 
 
   const questions = [
@@ -96,9 +97,11 @@ function App() {
 
   //on question click
   const handleClick = (e) => {
+    e.preventDefault();
     const questionIndex = parseInt(e.currentTarget.getAttribute('data-question-index'));
 
     const answerIndex = parseInt(e.target.value);
+    setUserAnswersID(answerIndex);
     setUserAnswer(questionIndex, answerIndex);
     if (questionIndex + 1 < questions.length) {
       goToQuestion(questionIndex + 1);
@@ -146,7 +149,7 @@ console.log("userAnswers", userAnswers)
                   <Answers
                       currentQuestion={question}
                       currentQuestionIndex={currentQuestion}
-                      userAnswerID={userAnswers}
+                      userAnswerID={userAnswersID}
                       handleClick={handleClick}
                   />
                   <TimeProgress
