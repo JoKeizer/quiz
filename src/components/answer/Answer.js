@@ -1,26 +1,20 @@
 import React, {useState} from 'react';
 import './Answer.css';
-
-
-function Answer ({ answer, valueId, letter, selected, handleClick}) {
+function Answer ({ answer, valueId, letter, currentQuestionIndex, selected, handleClick}) {
     let classes =['btn-answer']
-    // selected = true
 
     if(selected) {
         classes.push('correct')
     }
-
     return (
-        <button 
-        className={classes.join(' ')}
-        onClick={handleClick}
-        value={valueId}>
+        <button
+            className={classes.join(' ')}
+            onClick={handleClick}
+            data-question-index={currentQuestionIndex}
+            value={valueId}>
             <div className="answer-id">{letter}</div>
-        {answer}
+            {answer}
         </button>
     );
 }
-
 export default Answer
-
-

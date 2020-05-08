@@ -1,0 +1,13 @@
+.image-container {
+    width: var(--maxWidthContainer);
+}
+
+.image-size {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.video-size {
+    border-radius: 30px;
+
+}

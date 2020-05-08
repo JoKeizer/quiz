@@ -3,72 +3,42 @@ import ReactDOM from "react-dom";
 import VisibilitySensor from "react-visibility-sensor";
 import { animated, useSpring, config } from 'react-spring';
 import * as easings from 'd3-ease';
-
-
 import './TimeProgress.css';
+import ProgressBar from "./ProgressBar";
 
-function TimeProgress ({percent, time, score}) {
-  // const seconds = time / 1000;
 
-  //Total time about a question
+function TimeProgress ({percent, time , stopTimerOnClick, resetTimerOnNextQuestion}) {
   let timeQuestion = null;
 
   const [seconds, setSeconds] = useState(0);
-  const [delay, setDelay] = useState(time);
-  const [timerOn, setTimerOn] = useState(true)
+  let [percentRange, setProgress] = useState(60);
 
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if(timerOn) {
+      if(stopTimerOnClick) {
         setSeconds(seconds => seconds + 1);
-        // console.log("timer on")
       } else {
         timeQuestion = seconds;
-        console.log(timeQuestion, "total time about this question")
         clearInterval(seconds)
         setSeconds(timeQuestion)
       }
     }, 1000);
     return () => clearInterval(interval);
 
-  }, [timerOn]);
+  }, [stopTimerOnClick]);
 
-    const scoreNumber = useSpring({
-        from: { val: 100 }, to: { val: 0 },
-        config: {duration: 30000, easing: easings.easeLinear}
-    });
 
-    const [isInView, setIsInView] = useState(false);
-    const onVisibilityChange = isInView => setIsInView(isInView);
-
-    const progressSpringStyleProps = useSpring({
-        width: isInView ?  `0%` : `${percent}%`,
-        config: { duration: 30000, easing: easings.easeLinear }
-      });
-
-  
-      const stopTimer = () => setTimerOn(false)
+  console.log(percentRange, "percentRange")
 
     return (
-  
-    <VisibilitySensor onChange={onVisibilityChange}>
       <div>
       {seconds} seconds have elapsed since mounting.
-      <button onClick={stopTimer}>pause interval</button>
-    <p>Total score: {100 - seconds}</p>
-
-        <animated.div>
-       {scoreNumber.val.interpolate(val => Math.floor(val))}
-    </animated.div>
-        <div className={"progressbar"}>
-          <animated.div
-            className={"progressbar-active"}
-            style={progressSpringStyleProps}
-          />
-        </div>
+          <p>Total score: {100 - seconds}</p>
+        <ProgressBar
+            percentage={percentRange}
+        />
       </div>
-    </VisibilitySensor>
     );
 
 }
