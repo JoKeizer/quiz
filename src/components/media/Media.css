@@ -11,3 +11,59 @@
     border-radius: 30px;
 
 }
+
+
+/*.cells {*/
+/*    transform-style: preserve-3d;*/
+
+/*    animation: slide-down 2s forwards cubic-bezier(0,1.18, .82,1.02);*/
+/*    animation-delay: calc(0.25s + (0.05s * var(--cell-index)));*/
+
+
+/*    transition: transform 0.7s cubic-bezier(0.35, 0.33, 0, 1.5);*/
+/*    transition-delay: calc(*/
+/*            0.25s + (0.05s * (var(--cell-total) - var(--cell-index)))*/
+/*    );*/
+/*}*/
+
+/*@keyframes slide-down {*/
+/*    from {*/
+/*        transform: rotateX(360deg);*/
+/*        opacity: 0;*/
+
+/*    }*/
+/*    to {*/
+/*        transform: rotateX(0deg);*/
+/*        opacity: 1;*/
+/*        font-size: 4.2rem;*/
+/*        padding: 5px;*/
+/*        display: block;*/
+/*    }*/
+
+/*}*/
+
+
+.cell {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateZ(-15px);
+    transform-style: preserve-3d;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s, 0.4s;
+    transition-timing-function: cubic-bezier(.65,.01,.15,1.33);
+    animation: animation 10s forwards cubic-bezier(0,1.18, .82,1.02);
+    animation-delay: calc( .1s * calc(var(--col-index) - var(--center-x)) + 4.1s * calc(var(--row-index) - var(--center-y)) );
+    /*animation-delay: calc( 1.1s * calc(var(--col-index)  * 2s * calc(var(--row-index) ));*/
+
+}
+
+@keyframes animation {
+    from {
+        transform: rotateY(45deg) rotate(45deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0deg)  rotate(0deg);
+        opacity: 1;
+    }
+}

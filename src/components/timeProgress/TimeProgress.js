@@ -27,7 +27,7 @@ function TimeProgress ({percent, time , stopTimerOnClick, resetTimerOnNextQuesti
     return () => clearInterval(interval);
 
   }, [stopTimerOnClick]);
-  
+
 
     return (
       <div>

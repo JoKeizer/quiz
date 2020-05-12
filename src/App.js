@@ -25,6 +25,7 @@ function App() {
       answers: ["Leroy Fer", "Marcos Senesi", "Steven Berghuis", "Justin Bijlow"],
       image: "/../../../images/voetbal.jpg",
       video: "",
+      animation: true,
       correctAnswer: "Leroy Fer"
     },
     {
@@ -32,6 +33,7 @@ function App() {
       question: "From witch year is this picture? ",
       answers: ["1989", "1988 ", "1987", "1990"],
       video: "www.youtube.com/embed/25rv6hZK-1A",
+      animation: false,
       answer: "1988"
     },
     {
@@ -40,6 +42,7 @@ function App() {
       answers: ["Brazil", "England", "Netherlands", "Spain"],
       image: "/../../../images/maradona.jpg",
       video: "",
+      animation: false,
       answer: "England"
     },
     {
@@ -48,6 +51,7 @@ function App() {
       answers: ["Serena Williams", "Venus Williams"],
       image: "",
       video: "",
+      animation: false,
       answer: "Serena Williams"
     },
     {
@@ -56,6 +60,7 @@ function App() {
       answers: ["Spain", "Uruguay", "Germany", "Argentina"],
       image: "",
       video: "",
+      animation: false,
       answer: "Uruguay"
     },
     {
@@ -64,6 +69,7 @@ function App() {
       answers: ["1910", "1887", "1877", "1904"],
       image: "",
       video: "",
+      animation: false,
       answer: "1877"
     },
     {
@@ -72,6 +78,7 @@ function App() {
       answers: ["Sebastian Vettel", "Lewis hamilton ", "Max Verstappen", "Michael Schumacher"],
       image: "",
       video: "",
+      animation: false,
       answer: "Michael Schumacher"
     },
     {
@@ -80,6 +87,7 @@ function App() {
       answers: ["Javelin", "1500m", "Hammer throw", "Pole vault"],
       image: "",
       video: "",
+      animation: false,
       answer: "Hammer Throw"
     },
   ];
@@ -147,7 +155,7 @@ console.log("userAnswers", userAnswers)
                 <Header title="Trivia"/>
                 <div className="game-container">
                   <Progress currentQuestion={currentQuestion + 1} total={questions.length} active={true}/>
-                  {question.video && question.image === '' ? null : <Media image={question.image} video={question.video}/>}
+                  {question.video && question.image === '' ? null : <Media image={question.image} video={question.video} animation={question.animation}/>}
                   <Question question={question.question}/>
                   <Answers
                       currentQuestion={question}
